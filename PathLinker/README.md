@@ -1,6 +1,6 @@
-## Dockerized PathLinker
+# Dockerized PathLinker
 
-**DOCKER_BUILD_V1:**
+## DOCKER_BUILD_V1:
 - Create and activate Pathlinker environment on docker run call
 
 To build the image from the DOCKER_BUILD_V1 folder:
@@ -11,7 +11,7 @@ To run the image:
 
 `docker run -it pathlinker/pathlinker-v1 bash`
 
-**DOCKER_BUILD_V2:**
+## DOCKER_BUILD_V2:
 - activate environment inside image
 
 To build the image from the DOCKER_BUILD_V2 folder:
