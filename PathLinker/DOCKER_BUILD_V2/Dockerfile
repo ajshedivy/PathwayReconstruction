@@ -1,11 +1,13 @@
 FROM ubuntu:20.04
 
-# INSTALL ADDITIONAL TOOLS
+# version 2: clone pathlinker code base and use saved bash script to run pathlinker 
+
+# INSTALL  TOOLS
 RUN  apt-get update \
   && apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/*
 
-# INSTALL ADDITIONAL TOOLS
+# INSTALL GIT
 RUN apt update \
     && apt install -y git
 
@@ -20,8 +22,7 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh -
     /opt/conda/bin/conda clean --all && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-    echo "conda activate base" >> ~/.bashrc && \
-    eval "$(/home/PathLinkerHome/bin/conda shell.bash hook)"
+    echo "conda activate base" >> ~/.bashrc
 
 
 # RUN bash /home/seluser/Miniconda2-latest-Linux-x86_64.sh -b -p \
@@ -33,4 +34,4 @@ RUN git clone https://github.com/ajshedivy/Pathlinker-project.git
 
 USER root
 
-WORKDIR /home/PathLinkerHome
+WORKDIR /home/PathLinkerHome/Pathlinker-project
