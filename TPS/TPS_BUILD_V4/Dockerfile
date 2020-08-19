@@ -8,7 +8,7 @@ USER root
 RUN apt-get update && apt-get -y install default-jdk git curl
 
 # Set JAVA_HOME From sudo update-alternatives --config java
-RUN echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
+RUN echo '/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java' >> /etc/environment
 
 # install TPS
 WORKDIR /home/TPS_HOME
